@@ -1,0 +1,17 @@
+{
+  "name": "bookshop-api",
+  "version": "1.0.0",
+  "description": "API para o sistema de loja de livros",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "dotenv": "^16.0.3",
+    "express": "^4.17.3",
+    "mysql2": "^3.11.0"
+  },
+  "author": "Luigi",
+  "license": "MIT"
+}
