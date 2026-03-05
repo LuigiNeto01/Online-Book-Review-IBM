@@ -1,102 +1,61 @@
-# Online Book Review API - IBM Project
+<h1 align="center">📚 Online Book Review — IBM</h1>
+<p align="center">
+  Sistema de avaliação de livros online — Projeto do curso IBM Full Stack.
+</p>
+<p align="center">
+  <img alt="JavaScript" src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/>
+  <img alt="Node.js" src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white"/>
+  <img alt="Express" src="https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white"/>
+  <img alt="IBM" src="https://img.shields.io/badge/IBM_Course-052FAD?style=for-the-badge&logo=ibm&logoColor=white"/>
+</p>
 
-Welcome to the Online Book Review API, an API designed as part of an IBM project to manage book data and user reviews. This API allows users to search for books, add or update reviews, and manage user registrations.
+---
 
-## Features
+## 📋 Sobre
 
-- **Book Management:**
-  - Get a list of all books
-  - Search books by ISBN
-  - Search books by author
-  - Search books by title
+Projeto desenvolvido como parte do curso de **Desenvolvimento Full Stack da IBM**. Uma aplicação de **revisão de livros online** com API RESTful que permite cadastrar, consultar e avaliar livros.
 
-- **Review Management:**
-  - Add or update a review for a specific book
-  - Delete a review for a specific book
+## ✨ Funcionalidades
 
-- **User Management:**
-  - Register a new user
-  - Login with registered user credentials
+- 📖 Listagem de todos os livros disponíveis
+- 🔍 Busca por ISBN, título ou autor
+- ⭐ Cadastro e consulta de avaliações de livros
+- 👤 Registro e login de usuários
+- 🔐 Rotas protegidas com autenticação JWT
+- ⚡ Suporte a requisições assíncronas com Promises e Async/Await
 
-## Endpoints
+## 🚀 Como executar
 
-### Books
+```bash
+git clone https://github.com/LuigiNeto01/Online-Book-Review-IBM.git
+cd Online-Book-Review-IBM
 
-- **GET /api/v1/books**: Retrieve all books using an async callback function.
-- **GET /api/v1/books/isbn/:isbn**: Search for a book by its ISBN (using Promises).
-- **GET /api/v1/books/author/:author**: Search for books by the author's name.
-- **GET /api/v1/books/title/:title**: Search for books by the title.
-- **PUT /api/v1/books/:id/reviews**: Add or update a review for a specific book.
-- **DELETE /api/v1/books/:id/reviews**: Delete a review for a specific book.
-
-### Users
-
-- **POST /api/auth/register**: Register a new user.
-- **POST /api/auth/login**: Login with user credentials.
-
-## Installation
-
-To run this API locally, follow these steps:
-
-1. **Clone the repository:**
-
-       git clone https://github.com/LuigiNeto01/Online-Book-Review-IBM.git
-       cd Online-Book-Review-IBM
-Install dependencies:
 npm install
+npm start
+```
 
-Set up the database:
+A API estará disponível em `http://localhost:5000`.
 
-Ensure you have MySQL installed and running.
+## 📡 Endpoints
 
-Create a new database and the required tables by running the following SQL commands:
+| Método | Rota | Descrição |
+|---|---|---|
+| GET | `/` | Lista todos os livros |
+| GET | `/isbn/:isbn` | Busca por ISBN |
+| GET | `/author/:author` | Busca por autor |
+| GET | `/title/:title` | Busca por título |
+| GET | `/review/:isbn` | Obtém reviews |
+| POST | `/register` | Cadastra usuário |
+| POST | `/customer/login` | Login |
+| PUT | `/customer/auth/review/:isbn` | Adiciona review |
+| DELETE | `/customer/auth/review/:isbn` | Remove review |
 
-sql
-Copiar código
+## 🚀 Tecnologias
 
-    CREATE DATABASE Library;
+- **Node.js** + **Express.js**
+- **JWT** (autenticação)
+- **Axios** (requisições HTTP)
 
-    USE Library;
-    
-    CREATE TABLE books (
-        id INT AUTO_INCREMENT PRIMARY KEY,
-        title VARCHAR(255),
-        author VARCHAR(255),
-        isbn VARCHAR(13),
-        review TEXT
-    );
-    
-    CREATE TABLE users (
-        id INT AUTO_INCREMENT PRIMARY KEY,
-        username VARCHAR(255) UNIQUE,
-        password VARCHAR(255)
-    );
-Configure environment variables:
+---
 
-Create a .env file in the root of the project.
-Add the following variables:
-env:
-
-    DB_HOST=localhost
-    
-    DB_USER=your_mysql_user
-    
-    DB_PASSWORD=your_mysql_password
-    
-    DB_NAME=Library
-    
-Start the server:
-  node server.js
-    > The server will be running on http://localhost:3000.
-
-Usage
-  You can interact with the API using tools like Postman or any other API client.
-
-Contributing
-  Contributions are welcome! Please feel free to submit a Pull Request.
-
-License
-  This project is licensed under the MIT License.
-
-Contact
-  If you have any questions, feel free to reach out via the repository's issue tracker.
+<p align="center">Feito com ❤️ por <a href="https://github.com/LuigiNeto01">LuigiNeto01</a></p>
